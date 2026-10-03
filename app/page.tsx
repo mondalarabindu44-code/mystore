@@ -1,4 +1,5 @@
 import { supabase } from "@/lib/supabase";
+import Header from "./components/Header";
 
 export const dynamic = "force-dynamic";
 
@@ -10,7 +11,10 @@ export default async function Home() {
 
   return (
     <main className="min-h-screen bg-white text-black p-6">
-      <h1 className="text-3xl font-bold mb-6">My Store</h1>
+      <div className="flex justify-between items-center mb-6">
+  <h1 className="text-3xl font-bold">My Store</h1>
+  <Header />
+</div>
 
       {error && <p className="text-red-600">Error: {error.message}</p>}
 
