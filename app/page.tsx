@@ -21,9 +21,13 @@ export default async function Home() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {products?.map((p) => (
           <div key={p.id} className="border rounded-xl p-4 shadow-sm">
-            <div className="h-40 bg-gray-100 rounded-lg mb-3 flex items-center justify-center text-gray-400">
-              Photo
-            </div>
+            {p.image_url ? (
+  <img src={p.image_url} alt={p.name} className="h-40 w-full object-cover rounded-lg mb-3" />
+) : (
+  <div className="h-40 bg-gray-100 rounded-lg mb-3 flex items-center justify-center text-gray-400">
+    Photo
+  </div>
+)}
             <h2 className="text-lg font-semibold">{p.name}</h2>
             <p className="text-gray-600 text-sm">{p.description}</p>
             <p className="text-xl font-bold mt-2">₹{p.price}</p>
