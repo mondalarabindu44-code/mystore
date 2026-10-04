@@ -1,6 +1,6 @@
 import { supabase } from "@/lib/supabase";
 import Header from "./components/Header";
-
+import AddToCart from "./components/AddToCart";
 export const dynamic = "force-dynamic";
 
 export default async function Home() {
@@ -34,12 +34,7 @@ export default async function Home() {
             <p className="text-sm text-gray-500">
               {p.stock > 0 ? `${p.stock} ta ache` : "Sold out"}
             </p>
-            <button
-              disabled={p.stock === 0}
-              className="mt-3 w-full bg-black text-white rounded-lg py-2 disabled:bg-gray-400"
-            >
-              Add to cart
-            </button>
+            <AddToCart product={p} />
           </div>
         ))}
       </div>
