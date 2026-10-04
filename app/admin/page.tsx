@@ -112,7 +112,10 @@ export default function AdminPage() {
     <main className="min-h-screen bg-white text-black p-6 max-w-2xl mx-auto">
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-2xl font-bold">Admin</h1>
-        <Link href="/" className="underline text-sm">Dokan dekho</Link>
+        <div className="flex gap-4 text-sm">
+  <Link href="/admin/orders" className="underline">Orders</Link>
+  <Link href="/" className="underline">Dokan dekho</Link>
+</div>
       </div>
 
       <div className="border rounded-xl p-4 mb-8">
